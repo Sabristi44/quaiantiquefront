@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import Welcome from '../components/Welcome.vue'
+import NavbarConnected from '@/components/Navbar/NavbarConnected.vue';
+
 </script>
 
 <template>
   <main>
-    <Welcome />
+    <NavbarConnected></NavbarConnected>
+    <h1>connecté</h1>
   </main>
 </template>

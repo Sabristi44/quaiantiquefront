@@ -1,38 +1,45 @@
-import { isConnectGuard } from '@/shared/guard/auth.guard';
 import type {RouteRecordRaw} from "vue-router";
-import LoginViewVue from '@/views/LoginView.vue';
+import HomeAdminVue from '@/views/HomeAdminView.vue';
+import HomeView from '@/views/HomeView.vue';
 
-
-export const APP_ROUTES: RouteRecordRaw[] = [
+export const ADMIN_ROUTES: RouteRecordRaw[] = [
     {
-        path: "/home",
-        component: LoginViewVue,
+        path: "",
+        component: HomeAdminVue,
         meta:{
             page: "accueil"
         }
     },
     {
-        path: "/dish",
+        path: "dish",
         beforeEnter: [],
-        component: LoginViewVue,
+        component: HomeAdminVue,
         meta: {
             page: "menu"
         }
     },
     {
-        path: "/book",
+        path: "menu",
         beforeEnter: [],
-        component: LoginViewVue,
+        component: HomeAdminVue,
+        meta: {
+            page: "menu"
+        }
+    },
+    {
+        path: "book",
+        beforeEnter: [],
+        component: HomeAdminVue,
         meta: {
             page: "réserver"
         }
     },
     {
-        path: "/logout",
-        beforeEnter: [isConnectGuard],
-        component: LoginViewVue,
+        path: "logout",
+        beforeEnter: [],
+        component: HomeView,
         meta: {
-            page: "dash"
+            page: "déconnexion"
         }
     }
 ]

@@ -5,6 +5,8 @@ export function isConnectGuard(){
     const userStore = useUserStore()
     if(userStore.isConnected){
         return '/secure';
+    } else {
+        return '/';
     }
 }
 

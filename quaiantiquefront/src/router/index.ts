@@ -1,4 +1,4 @@
-import {isConnectGuard } from '@/shared/guard/auth.guard'
+import { ADMIN_ROUTES } from './admin.router';
 import LoginViewVue from  '@/views/LoginView.vue';
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
@@ -28,14 +28,18 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: "/secure",
-      beforeEnter: [isConnectGuard],
-      component: HomeView,
+      path: "/secure/",
+      beforeEnter: [],
       children: APP_ROUTES
     },
     {
+      path: "/admin/",
+      beforeEnter: [],
+      children: ADMIN_ROUTES
+    },
+    {
       path: '/connect',
-      beforeEnter: [isConnectGuard],
+      beforeEnter: [],
       component: LoginViewVue,
     },
     {

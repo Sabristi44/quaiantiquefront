@@ -1,6 +1,5 @@
 import type { reservationInterface } from './reservation.interface';
 export interface UserResponse{
-    accessToken: string,
     user: User
 }
 
@@ -8,7 +7,7 @@ export interface User{
     id: number,
     mail: string,
     allergies: string,
-    reservations: [reservationInterface],
+    reservations: reservationInterface[],
     isAdmin: boolean,
     numPerson: number,
 }
@@ -22,8 +21,8 @@ export const  defaultUser = {
     id: 1,
     mail: "test@yopmail.com",
     allergies: "Fromage, Kiwi, Fraise",
-    reservations: [],
     isAdmin: false,
+    reservations: [],
     numPerson: 1
 }
 

@@ -12,9 +12,14 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
+    "@vee-validate/zod": "^4.7.4",
     "bootstrap": "^5.2.3",
     "pinia": "^2.0.28",
-    "vue-router": "^4.1.6"
+    "sass": "^1.58.3",
+    "scss": "^0.2.4",
+    "vee-validate": "^4.7.4",
+    "vue-router": "^4.1.6",
+    "zod": "^3.20.6"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",

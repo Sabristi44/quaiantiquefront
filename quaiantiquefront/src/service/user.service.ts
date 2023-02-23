@@ -1,14 +1,14 @@
 import type { UserAddAllergies } from './../shared/interface/user.interface';
-import type { InterfaceUserConnection, User} from './../interface/user.interface';
 import { URL_SCHEME } from './index.service';
+import type { UserConnectInterface, User } from './../shared/interface/user.interface';
 
 
-export async function loginUserService(User : InterfaceUserConnection): Promise<User> {
+export async function loginUserService(User : UserConnectInterface): Promise<User> {
     const response = await (await fetch(`${URL_SCHEME}/login`,
         {
             method: "POST",
             body: JSON.stringify({
-                mail: User.mail,
+                mail: User.email,
                 password: User.password,
             }),
             headers: {
@@ -22,13 +22,13 @@ export async function loginUserService(User : InterfaceUserConnection): Promise<
     }
 }
 
-export async function addAllergiesService(User : UserAddAllergies): Promise<User> {
+export async function addAllergiesService(userId : number, allergies: String) {
     const response = await (await fetch(`${URL_SCHEME}/allergy`,
         {
             method: "POST",
             body: JSON.stringify({
-               id: User.id,
-               allergies: User.allergies,
+               id: userId,
+               allergies: allergies,
             }),
             headers: {
                 "Content-type": "application/json"

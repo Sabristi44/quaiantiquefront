@@ -28,12 +28,14 @@ const {value : email, errorMessage : error_email} = useField("email")
 const {value : password, errorMessage : error_password} = useField("password")
 const tryConnect = handleSubmit( async (formValues) => {
   try {
-    await userStore.goConnect(formValues);
-    if(userStore.currentUser.isAdmin) {
+    await userStore.goConnect(formValues as UserConnectInterface);
+    if(userStore.currentUser.admin) {
       await router.push("/admin")
     } else {
-      await router.push("/secure/home");
+	if(localStorage.getItem("user") != null){
+      await router.push("/secure");
     }
+}
   }catch (e){
     console.log(e)
   }
@@ -52,7 +54,9 @@ const tryConnect = handleSubmit( async (formValues) => {
         </div>
   <form
       class="form"
-      @submit="tryConnect" >
+
+      @submit="tryConnect"
+  >
     <div class="input-control">
       <label for="email" class="input-label" hidden>Email</label>
       <input type="email" v-model="email" name="email" id="email" class="input-field" placeholder="Email" :class="{ error_input : error_email}">
@@ -62,7 +66,7 @@ const tryConnect = handleSubmit( async (formValues) => {
       <input type="password" name="password"  v-model="password" id="password" class="input-field" placeholder="Mot de passe"  :class="{error_input : error_password}">
     </div>
     <div class="input-control">
-      <input type="submit" class="input-submit" value="Se connecter" disabled>
+      <input type="submit" class="input-submit" value="Se connecter">
     </div>
   </form>
 </section>

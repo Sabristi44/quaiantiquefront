@@ -8,7 +8,7 @@ export interface User{
     mail: string,
     allergies: string,
     reservations: reservationInterface[],
-    isAdmin: boolean,
+    admin: boolean,
     numPerson: number,
 }
 export interface UserConnectInterface{
@@ -17,11 +17,11 @@ export interface UserConnectInterface{
 }
 
 
-export const  defaultUser = {
+export const defaultUser = {
     id: 1,
     mail: "test@yopmail.com",
     allergies: "Fromage, Kiwi, Fraise",
-    isAdmin: false,
+    admin: false,
     reservations: [],
     numPerson: 1
 }

@@ -1,5 +1,6 @@
 import type {RouteRecordRaw} from "vue-router";
 import HomeAdminVue from '@/views/HomeAdminView.vue';
+import ScheduleAdminVue from '@/views/ScheduleAdminView.vue';
 import HomeView from '@/views/HomeView.vue';
 
 export const ADMIN_ROUTES: RouteRecordRaw[] = [
@@ -27,11 +28,11 @@ export const ADMIN_ROUTES: RouteRecordRaw[] = [
         }
     },
     {
-        path: "book",
+        path: "schedule",
         beforeEnter: [],
-        component: HomeAdminVue,
+        component: ScheduleAdminVue,
         meta: {
-            page: "réserver"
+            page: "horaire"
         }
     },
     {

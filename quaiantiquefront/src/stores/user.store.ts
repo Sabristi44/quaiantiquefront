@@ -5,24 +5,20 @@ import { defaultUser } from "@/shared/interface/user.interface";
 
 
 interface UserStoreInterface{
-    isConnected : boolean,
     currentUser: User,
-    isAdmin: boolean,
 }
 
 
 export const useUserStore = defineStore("userStore", {
     state: (): UserStoreInterface => ({
-        isConnected: false,
         currentUser: defaultUser,
-        isAdmin: false,
     }),
     actions: {
         async goConnect (formConnect: UserConnectInterface) {
             try {
                 const response = await loginUserService(formConnect);
                 this.currentUser = response;
-                localStorage.setItem('user', JSON.stringify(response));
+                localStorage.setItem('user', JSON.stringify(this.currentUser));
             } catch (e) {
                 console.log("erreur" + e);
             }

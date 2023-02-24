@@ -3,6 +3,7 @@ import LoginViewVue from  '@/views/LoginView.vue';
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { APP_ROUTES } from './app.router';
+import { isAdminGuard, isConnectGuard } from '@/shared/guard/auth.guard';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,31 +11,35 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      beforeEnter: [],
       component: HomeView
     },
     {
       path: '/dish',
       name: 'dish',
+      beforeEnter: [],
       component: HomeView
     },
     {
       path: '/menu',
       name: 'menu',
+      beforeEnter: [],
       component: HomeView
     },
     {
       path: '/book',
       name: 'Réservation',
+      beforeEnter: [],
       component: HomeView
     },
     {
       path: "/secure/",
-      beforeEnter: [],
+      beforeEnter: [isConnectGuard],
       children: APP_ROUTES
     },
     {
       path: "/admin/",
-      beforeEnter: [],
+      beforeEnter: [isAdminGuard],
       children: ADMIN_ROUTES
     },
     {

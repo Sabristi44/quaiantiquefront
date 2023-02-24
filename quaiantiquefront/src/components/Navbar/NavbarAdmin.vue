@@ -9,7 +9,7 @@
     <span class="mx-3"><router-link to="/admin/">Accueil</router-link></span>
     <span class="mx-3"><router-link to="/admin/dish">Plat</router-link></span>
    <span class="mx-3"><router-link to="/admin/menu">Menu</router-link></span>
-   <span class="mx-3"><router-link to="/admin/book">Réserver</router-link></span>
+   <span class="mx-3"><router-link to="/admin/schedule">Horaires</router-link></span>
    <span class="mx-3"><router-link to="/admin/logout">Se déconnecter</router-link></span>
 </div>
   </nav>

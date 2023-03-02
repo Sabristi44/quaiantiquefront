@@ -1,6 +1,9 @@
 import type {RouteRecordRaw} from "vue-router";
 import HomeView from '@/views/HomeView.vue';
 import HomeConnectedView from '@/views/HomeConnectedView.vue';
+import MenuViewVueConnected from '@/views/MenuViewVueConnected.vue';
+import DishViewVueConnected from '@/views/DishViewVueConnected.vue';
+import AllergyViewVue from '@/views/AllergyView.vue';
 
 
 export const APP_ROUTES: RouteRecordRaw[] = [
@@ -14,7 +17,7 @@ export const APP_ROUTES: RouteRecordRaw[] = [
     {
         path: "dish",
         beforeEnter: [],
-        component: HomeConnectedView,
+        component: DishViewVueConnected,
         meta: {
             page: "menu"
         }
@@ -22,7 +25,7 @@ export const APP_ROUTES: RouteRecordRaw[] = [
     {
         path: "menu",
         beforeEnter: [],
-        component: HomeConnectedView,
+        component: MenuViewVueConnected,
         meta: {
             page: "menu"
         }
@@ -33,6 +36,14 @@ export const APP_ROUTES: RouteRecordRaw[] = [
         component: HomeConnectedView,
         meta: {
             page: "réserver"
+        }
+    },
+    {
+        path: "allergy",
+        beforeEnter: [],
+        component: AllergyViewVue,
+        meta: {
+            page: "allergies"
         }
     },
     {

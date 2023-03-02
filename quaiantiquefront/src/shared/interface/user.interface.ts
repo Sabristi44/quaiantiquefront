@@ -26,7 +26,6 @@ export const defaultUser = {
     numPerson: 1
 }
 
-export interface UserAddAllergies{
-    id: number,
+export interface UserAllergies {
     allergies: string,
 }

@@ -22,6 +22,7 @@ function logout() {
     <span class="mx-3"><router-link to="/secure/dish">Plat</router-link></span>
    <span class="mx-3"><router-link to="/secure/menu">Menu</router-link></span>
    <span class="mx-3"><router-link to="/secure/book">Réserver</router-link></span>
+   <span class="mx-3"><router-link to="/secure/allergy">Allergies</router-link></span>
    <span class="mx-3" @click= "logout">Se déconnecter</span>
 </div>
   </nav>

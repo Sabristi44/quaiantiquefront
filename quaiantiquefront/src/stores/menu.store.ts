@@ -4,13 +4,13 @@ import { addMenuService, getAllMenuesService } from '@/service/menu.service';
 
 
 interface MenuStoreInterface{
-    listOfmenues: menuInterface[],
+    menues: menuInterface[],
 }
 
 
 export const useMenuStore = defineStore("menuStore", {
     state: (): MenuStoreInterface => ({
-        listOfmenues:  [],
+        menues:  [],
     }),
     actions: {
         async addMenu (formValues: addMenuInterface) {
@@ -23,10 +23,10 @@ export const useMenuStore = defineStore("menuStore", {
                 console.log("erreur" + e);
             }
         },  async getMenues(){
-            this.listOfmenues = await getAllMenuesService();
+            this.menues = await getAllMenuesService();
         },
     },
     getters: {
-        menues: (state) => state.listOfmenues,
+        listOfmenues: (state) => state.menues,
     }
 })

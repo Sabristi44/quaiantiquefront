@@ -1,4 +1,3 @@
-import type { UserAddAllergies } from './../shared/interface/user.interface';
 import { URL_SCHEME } from './index.service';
 import type { UserConnectInterface, User } from './../shared/interface/user.interface';
 

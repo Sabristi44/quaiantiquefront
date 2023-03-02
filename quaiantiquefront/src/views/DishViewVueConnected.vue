@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {useDishStore} from "@/stores/dish.store"
-import Navbar from "@/components/Navbar/Navbar.vue";
 import DishDetailVue  from "@/components/Dish/DishDetailView.vue";
+import NavbarConnected from "@/components/Navbar/NavbarConnected.vue";
 
 const dishStore = useDishStore()
 
@@ -11,7 +11,7 @@ dishStore.getDishes();
 </script>
 
 <template>
-    <Navbar></Navbar>
+    <NavbarConnected></NavbarConnected>
       <div class="container">
         <div class="col-sm">
         <h3>Nos plats</h3>

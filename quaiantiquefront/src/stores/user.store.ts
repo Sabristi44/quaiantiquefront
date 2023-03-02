@@ -1,3 +1,4 @@
+import type{ UserAllergies } from './../shared/interface/user.interface';
 import {defineStore} from "pinia";
 import type { User, UserConnectInterface} from "@/shared/interface/user.interface";
 import { loginUserService, addAllergiesService } from "@/service/user.service";
@@ -27,10 +28,11 @@ export const useUserStore = defineStore("userStore", {
             this.currentUser = defaultUser;
             localStorage.removeItem('user');
         },
-        async updateAllergies(allergies: String)
+        async updateAllergies(allergies: UserAllergies)
         {
             try {
-            addAllergiesService(this.currentUser.id,allergies);
+            addAllergiesService(this.currentUser.id,allergies.allergies);
+            this.currentUser.allergies = allergies.allergies;
             } catch(e) {
                 console.log("erreur" + e);
             }

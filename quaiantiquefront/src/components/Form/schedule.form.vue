@@ -3,9 +3,6 @@ import z from "zod";
 import {useField, useForm} from "vee-validate"
 import {toFormValidator} from "@vee-validate/zod";
 import {useScheduleStore} from "@/stores/schedule.store"
-import type { UserConnectInterface , User } from "@/shared/interface/user.interface";
-import { useRouter } from "vue-router";
-import Navbar from "@/components/Navbar/Navbar.vue";
 import type { scheduleInterface } from "@/shared/interface/schedule.interface";
 
 const scheduleStore = useScheduleStore()
@@ -76,6 +73,7 @@ const tryAddSchedule = handleSubmit( async (formValues) => {
 
 
 <template>
+  <div class="container">
 <form
       class="form"
 
@@ -141,6 +139,6 @@ const tryAddSchedule = handleSubmit( async (formValues) => {
       <input type="submit" class="input-submit" value="Envoyer">
     </div>
   </form>
-
+</div>
   </template>
   

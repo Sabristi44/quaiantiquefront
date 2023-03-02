@@ -7,8 +7,7 @@ scheduleStore.getSchedule()
 </script>
 
 <template>
-    <div class="footer">
-        <div class="container">                     
+    <div class="footer">                
                 <div class="row-lg-4 row-sm-4 row-xs-12">
                     <div class="single_footer">
                         <h4>Ouverture</h4>
@@ -36,7 +35,7 @@ scheduleStore.getSchedule()
                        
                 </div>
             </div>             
-        </div>
+
     </div>
 
     

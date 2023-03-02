@@ -2,6 +2,8 @@ import type {RouteRecordRaw} from "vue-router";
 import HomeAdminVue from '@/views/HomeAdminView.vue';
 import ScheduleAdminVue from '@/views/ScheduleAdminView.vue';
 import HomeView from '@/views/HomeView.vue';
+import dishAdminVue from '@/views/DishAdminView.vue';
+import MenuAdminVue from '@/views/MenuAdminView.vue';
 
 export const ADMIN_ROUTES: RouteRecordRaw[] = [
     {
@@ -14,7 +16,7 @@ export const ADMIN_ROUTES: RouteRecordRaw[] = [
     {
         path: "dish",
         beforeEnter: [],
-        component: HomeAdminVue,
+        component: dishAdminVue,
         meta: {
             page: "menu"
         }
@@ -22,7 +24,7 @@ export const ADMIN_ROUTES: RouteRecordRaw[] = [
     {
         path: "menu",
         beforeEnter: [],
-        component: HomeAdminVue,
+        component: MenuAdminVue,
         meta: {
             page: "menu"
         }

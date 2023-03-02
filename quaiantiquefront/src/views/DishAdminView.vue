@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import DishForm from '@/components/Form/dish.form.vue';
 import NavbarAdmin from '@/components/Navbar/NavbarAdmin.vue';
-import compositionForm from '@/components/Form/composition.form.vue';
+
 </script>
 
 <template>
   <main>
     <NavbarAdmin></NavbarAdmin>
-    <h1>Admin</h1>
-    <compositionForm></compositionForm>
+    <DishForm></DishForm>
   </main>
 </template>

@@ -1,8 +1,8 @@
-import type { compositionInterface } from './../shared/interface/composition.interface';
+import type { addCompositionInterface } from './../shared/interface/composition.interface';
 import { URL_SCHEME } from './index.service';
 
 
-export async function addComposiitonService(Composition : compositionInterface) {
+export async function addCompositionService(Composition : addCompositionInterface) {
     const response = await (await fetch(`${URL_SCHEME}/composition`,
         {
             method: "POST",

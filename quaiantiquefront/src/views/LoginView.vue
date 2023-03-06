@@ -6,6 +6,7 @@ import {useUserStore} from "@/stores/user.store"
 import type { UserConnectInterface , User } from "@/shared/interface/user.interface";
 import { useRouter } from "vue-router";
 import Navbar from "@/components/Navbar/Navbar.vue";
+import Footer from "./../components/Footer/footer.vue";
 
 const router = useRouter()
 const userStore = useUserStore()
@@ -72,6 +73,8 @@ const tryConnect = handleSubmit( async (formValues) => {
 </section>
 </div>
 </main>
+<Footer></Footer>
+
 </template>
 
 <style>
@@ -146,9 +149,7 @@ img {
 .container {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	max-width: 80rem;
-	min-height: 100vh;
 	width: 100%;
 	padding: 0 2rem;
 	margin: 0 auto;
@@ -177,9 +178,7 @@ img {
 		font-weight: 400;
 		color: var(--color-blue);
   }
-		.text:hover {
-			text-decoration: underline;
-		}
+
 
 	.wrapper {
 		max-width: 28rem;

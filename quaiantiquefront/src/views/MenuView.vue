@@ -2,6 +2,7 @@
 import {useMenuStore} from "@/stores/menu.store"
 import Navbar from "@/components/Navbar/Navbar.vue";
 import MenuDetailView from "@/components/Menu/MenuDetailView.vue";
+import Footer from "./../components/Footer/footer.vue";
 
 const menuStore = useMenuStore()
 menuStore.getMenues();
@@ -16,4 +17,5 @@ menuStore.getMenues();
         <MenuDetailView :data="menu" v-for="menu in menuStore.menues"></MenuDetailView>
     </div>
       </div>
+      <Footer></Footer>
   </template>

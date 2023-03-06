@@ -2,6 +2,7 @@
 import {useDishStore} from "@/stores/dish.store"
 import DishDetailVue  from "@/components/Dish/DishDetailView.vue";
 import NavbarConnected from "@/components/Navbar/NavbarConnected.vue";
+import Footer from "./../components/Footer/footer.vue";
 
 const dishStore = useDishStore()
 
@@ -18,4 +19,5 @@ dishStore.getDishes();
         <DishDetailVue :data="dish" v-for="dish in dishStore.allDishes"> </DishDetailVue>
     </div>
       </div>
+      <Footer></Footer>
   </template>

@@ -2,6 +2,7 @@
 import CompositionForm from '@/components/Form/composition.form.vue';
 import MenuForm from '@/components/Form/menu.form.vue';
 import NavbarAdmin from '@/components/Navbar/NavbarAdmin.vue';
+import Footer from "./../components/Footer/footer.vue";
 
 </script>
 
@@ -10,5 +11,6 @@ import NavbarAdmin from '@/components/Navbar/NavbarAdmin.vue';
     <NavbarAdmin></NavbarAdmin>
     <MenuForm></MenuForm>
     <CompositionForm></CompositionForm>
+    <Footer></Footer>
   </main>
 </template>

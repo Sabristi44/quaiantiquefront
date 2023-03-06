@@ -7,33 +7,19 @@ scheduleStore.getSchedule()
 </script>
 
 <template>
-    <div class="footer">                
-                <div class="row-lg-4 row-sm-4 row-xs-12">
+    <div class="footer fixed-bottom">                
                     <div class="single_footer">
-                        <h4>Ouverture</h4>
+                        <h4>Horaire</h4>
                         <ul>
-                            <li>Lundi : {{scheduleStore.$state.currentSchedule.openingMonday}}</li>
-                            <li>Lundi : {{scheduleStore.$state.currentSchedule.openingTuesday}}</li>
-                            <li>Mercredi : {{scheduleStore.$state.currentSchedule.openingWednesday}}</li>
-                            <li>Jeudi : {{scheduleStore.$state.currentSchedule.openingThursday}}</li>
-                            <li>Vendredi : {{scheduleStore.$state.currentSchedule.openingFriday}}</li>
-                            <li>Samedi: {{scheduleStore.$state.currentSchedule.openingSaturday}}</li>
-                            <li>Dimanche : {{scheduleStore.$state.currentSchedule.openingSunday}}</li>
+                            <li>Lundi : {{scheduleStore.$state.currentSchedule.openingMonday}} - {{scheduleStore.$state.currentSchedule.closingMonday}}</li>
+                            <li>Mardi : {{scheduleStore.$state.currentSchedule.openingTuesday}} - {{scheduleStore.$state.currentSchedule.closingTuesday}}</li>
+                            <li>Mercredi : {{scheduleStore.$state.currentSchedule.openingWednesday}} - {{scheduleStore.$state.currentSchedule.closingWednesday}}</li>
+                            <li>Jeudi : {{scheduleStore.$state.currentSchedule.openingThursday}} - {{scheduleStore.$state.currentSchedule.closingThursday}}</li>
+                            <li>Vendredi : {{scheduleStore.$state.currentSchedule.openingFriday}} - {{scheduleStore.$state.currentSchedule.closingFriday}}</li>
+                            <li>Samedi: {{scheduleStore.$state.currentSchedule.openingSaturday}} - {{scheduleStore.$state.currentSchedule.closingSaturday}}</li>
+                            <li>Dimanche : {{scheduleStore.$state.currentSchedule.openingSunday}} - {{scheduleStore.$state.currentSchedule.closingSunday}}</li>
                         </ul>
-                    </div>
-                            <div class="single_footer ">
-                                <h4>Fermeture</h4>
-                                <ul>
-                                    <li>Lundi : {{scheduleStore.$state.currentSchedule.closingMonday}}</li>
-                                    <li>Lundi : {{scheduleStore.$state.currentSchedule.closingTuesday}}</li>
-                                    <li>Mercredi : {{scheduleStore.$state.currentSchedule.closingWednesday}}</li>
-                                    <li>Jeudi : {{scheduleStore.$state.currentSchedule.closingThursday}}</li>
-                                    <li>Vendredi : {{scheduleStore.$state.currentSchedule.closingFriday}}</li>
-                                    <li>Samedi: {{scheduleStore.$state.currentSchedule.closingSaturday}}</li>
-                                    <li>Dimanche : {{scheduleStore.$state.currentSchedule.closingSunday}}</li>
-                                </ul>
-                       
-                </div>
+            
             </div>             
 
     </div>
@@ -77,7 +63,9 @@ section {
    /* min-height: 100vh;*/
 }
 .footer {
-background: linear-gradient(105deg,#6e99e6 ,#093c94);
+padding-top: 1em;
+padding-bottom: 1em;
+background: linear-gradient(105deg,#6e99e6 ,#093c94);    /* Footer height */
 }
 
 @media only screen and (max-width:768px) { 
@@ -86,7 +74,7 @@ background: linear-gradient(105deg,#6e99e6 ,#093c94);
 .single_footer h4 {
 color: #fff;
 margin-top: 0;
-margin-bottom: 25px;
+margin-bottom: 1em;
 font-weight: 700;
 text-transform: uppercase;
 font-size: 20px;
@@ -97,7 +85,6 @@ display: block;
 height: 2px;
 width: 40px;
 background: #fff;
-margin-top: 20px;
 }
 .single_footer p{color:#fff;}
 .single_footer ul {

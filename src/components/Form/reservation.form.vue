@@ -15,17 +15,18 @@ const initialValues = {
     allergies: "",
     numPerson: 1,
     mail: "",
-    date: "",
-    hour: "",
+    date: new Date("2019-01-16"),  
+    hour: new Date("2019-01-16"),  
 }
 
 const required_error = {required_error : "Veuillez renseigner ce champ"}
 const validationSchema = toFormValidator(
     z.object({
+        allergies: z.string(required_error),
         numPerson: z.number(required_error),
         mail: z.string(required_error),
-        date: z.date(required_error),
-        hour: z.date(required_error),
+        date: z.any(required_error),
+        hour: z.any(required_error),
     })
 )
 const {handleSubmit} = useForm({
@@ -39,20 +40,16 @@ const {value : mail } = useField("mail");
 const {value : date } = useField("date");
 const {value : hour } = useField("hour");
 
+
 const tryAddReservation = handleSubmit( async (formValues) => {
+  console.log("ça")
   try {
-    await reservationStore.addReservation(formValues as unknown as reservationInterface);
+    await reservationStore.addReservation(formValues as reservationInterface);
   }catch (e){
     console.log(e)
   }
 })
 
- function checkHourSlot(selecteDate: Date) {
-   var i = scheduleStore.bookingSlots.findIndex(selecteDate.getDate);
-   console.log(i + "coucou")
-   console.log(scheduleStore.bookingSlots[i].slots + "coucou")
-    return scheduleStore.bookingSlots[i].slots;
-}
 </script>
 
 <template>
@@ -82,7 +79,7 @@ const tryAddReservation = handleSubmit( async (formValues) => {
           <option v-for="hour in scheduleStore.listOfDaySlot" v-bind:value="hour">{{hour}}</option>
         </select>
       </div>
-    <button type="submit" class="btn btn-info">Réserver</button>
+    <button type="submit" class="btn btn-info ">Réserver</button>
   </form>
   </template>
   

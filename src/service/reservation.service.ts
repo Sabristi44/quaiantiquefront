@@ -9,8 +9,9 @@ export async function addReservationService(Reservation : reservationInterface) 
             body: JSON.stringify({
               allergies: Reservation.allergies,
               numPerson: Reservation.numPerson,
-              idUser: Reservation.idUser,
-              reservationDate: Reservation.reservationDate,
+              mail: Reservation.mail,
+              date: Reservation.date,
+              hour: Reservation.hour,
             }),
             headers: {
                 "Content-type": "application/json"
@@ -21,4 +22,4 @@ export async function addReservationService(Reservation : reservationInterface) 
     }else{
         throw response;
     }
-}
+}  

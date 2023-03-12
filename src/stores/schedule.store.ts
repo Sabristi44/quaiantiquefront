@@ -39,7 +39,6 @@ export const useScheduleStore = defineStore("scheduleStore", {
         }, updateSelectSlot(selecteDate: Date) {
             const indexSlots = (slots: slotInterface) => slots.day === selecteDate;
             var i  = this.slot.findIndex(indexSlots);
-            console.log("coucou" + this.slot[i].slots);
              this.selectedDate = this.slot[i].slots;
         }
     },

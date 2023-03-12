@@ -2,6 +2,7 @@ import { ADMIN_ROUTES } from './admin.router';
 import LoginViewVue from  '@/views/LoginView.vue';
 import DishViewVue from  '@/views/DishView.vue';
 import MenuViewVue from '@/views/MenuView.vue';
+import ReservationView from '@/views/ReservationView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { APP_ROUTES } from './app.router';
@@ -32,7 +33,7 @@ const router = createRouter({
       path: '/book',
       name: 'Réservation',
       beforeEnter: [],
-      component: HomeView
+      component: ReservationView,
     },
     {
       path: "/secure/",

@@ -1,3 +1,4 @@
+import type { slotInterface } from './../shared/interface/slot.interface';
 import type { scheduleInterface } from './../shared/interface/schedule.interface';
 import { URL_SCHEME } from './index.service';
 
@@ -35,6 +36,21 @@ export async function addScheduleService(Schedule : scheduleInterface): Promise<
 
 export async function getScheduleService(): Promise<scheduleInterface> {
     const response = await (await fetch(`${URL_SCHEME}/schedule`,
+        {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json"
+            }
+        })).json();
+    if(!response.error){
+        return response;
+    }else{
+        throw response;
+    }
+}
+
+export async function getBookingSlotService(): Promise<slotInterface[]> {
+    const response = await (await fetch(`${URL_SCHEME}/slot`,
         {
             method: "GET",
             headers: {

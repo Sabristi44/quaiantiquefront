@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import NavbarAdmin from '@/components/Navbar/NavbarAdmin.vue';
 import compositionForm from '@/components/Form/composition.form.vue';
-import Footer from "./../components/Footer/footer.vue";
+import FileForm from "./../components/Form/file.form.vue";
 </script>
 
 <template>
   <main>
     <NavbarAdmin></NavbarAdmin>
     <h1>Admin</h1>
-    <compositionForm></compositionForm>
+    <FileForm></FileForm>
     <Footer></Footer>
   </main>
 </template>

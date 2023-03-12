@@ -9,6 +9,5 @@ import Footer from "./../components/Footer/footer.vue";
   <main>
     <NavbarAdmin></NavbarAdmin>
     <ScheduleForm></ScheduleForm>
-    <Footer></Footer>
   </main>
 </template>

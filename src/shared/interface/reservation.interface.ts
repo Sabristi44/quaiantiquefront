@@ -1,6 +1,7 @@
 export interface reservationInterface{
     allergies: string,
     numPerson: number,
-    idUser: number,
-    reservationDate: Date,
+    mail: string,
+    date: Date,
+    hour: Date,
 }

@@ -13,11 +13,15 @@ dishStore.getDishes();
 
 <template>
     <Navbar></Navbar>
-      <div class="container">
-        <div class="col-sm">
+    <div class="space-nav">
         <h3>Nos plats</h3>
         <DishDetailVue :data="dish" v-for="dish in dishStore.allDishes"> </DishDetailVue>
         <Footer></Footer>
-    </div>
       </div>
   </template>
+
+  <style> 
+.space-nav {
+  margin-bottom: 10em;
+}
+</style>

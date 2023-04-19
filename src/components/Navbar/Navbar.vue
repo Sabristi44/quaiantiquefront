@@ -11,7 +11,8 @@
    <span class="mx-3"><router-link to="/menu" class="without-text-decoration">Menu</router-link></span>
    <span class="mx-3"><router-link to="/book" class="without-text-decoration">Réserver</router-link></span>
    <span class="mx-3"><router-link to="/connect" class="without-text-decoration">Se connecter</router-link></span>
-</div>
+   <span class="mx-3"><router-link to="/signUp" class="without-text-decoration">Créer un compte</router-link></span>
+  </div>
   </nav>
 </template>
 

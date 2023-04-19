@@ -27,9 +27,9 @@ const {handleSubmit} = useForm({
 })
 const {value : email, errorMessage : error_email} = useField("email")
 const {value : password, errorMessage : error_password} = useField("password")
-const tryConnect = handleSubmit( async (formValues) => {
+const trySignUp = handleSubmit( async (formValues) => {
   try {
-    await userStore.goConnect(formValues as UserConnectInterface);
+    await userStore.signUp(formValues as UserConnectInterface);
     if(userStore.currentUser.admin) {
       await router.push("/admin")
     } else {
@@ -50,13 +50,13 @@ const tryConnect = handleSubmit( async (formValues) => {
     <div class="container">
       <section class="wrapper">
         <div class="heading">
-          <h1 class="text text-large">Se connecter</h1>
+          <h1 class="text text-large">Créer un compte</h1>
   
         </div>
   <form
       class="form"
 
-      @submit="tryConnect"
+      @submit="trySignUp"
   >
     <div class="input-control">
       <label for="email" class="input-label" hidden>Email</label>
@@ -67,7 +67,7 @@ const tryConnect = handleSubmit( async (formValues) => {
       <input type="password" name="password"  v-model="password" id="password" class="input-field" placeholder="Mot de passe"  :class="{error_input : error_password}">
     </div>
     <div class="input-control">
-      <input type="submit" class="input-submit" value="Se connecter">
+      <input type="submit" class="input-submit" value="Créer son compte">
     </div>
   </form>
 </section>

@@ -9,8 +9,8 @@ import Footer from "./../components/Footer/footer.vue";
 <template>
   <main>
     <NavbarAdmin></NavbarAdmin>
-    <MenuForm></MenuForm>
-    <CompositionForm></CompositionForm>
+    <MenuForm class="border border-primary py-2"></MenuForm>
+    <CompositionForm class="border border-primary py-2"></CompositionForm>
     <Footer></Footer>
   </main>
 </template>

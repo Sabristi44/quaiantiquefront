@@ -1,5 +1,6 @@
 import { ADMIN_ROUTES } from './admin.router';
 import LoginViewVue from  '@/views/LoginView.vue';
+import SignUpViewVue from  '@/views/SignUpView.vue';
 import DishViewVue from  '@/views/DishView.vue';
 import MenuViewVue from '@/views/MenuView.vue';
 import ReservationView from '@/views/ReservationView.vue'
@@ -49,6 +50,11 @@ const router = createRouter({
       path: '/connect',
       beforeEnter: [],
       component: LoginViewVue,
+    },
+    {
+      path: '/signUp',
+      beforeEnter: [],
+      component: SignUpViewVue,
     },
     {
       path: '/:wild(.*)',

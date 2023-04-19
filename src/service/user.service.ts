@@ -21,6 +21,25 @@ export async function loginUserService(User : UserConnectInterface): Promise<Use
     }
 }
 
+export async function signUpUserService(User : UserConnectInterface): Promise<User> {
+    const response = await (await fetch(`${URL_SCHEME}/signup`,
+        {
+            method: "POST",
+            body: JSON.stringify({
+                mail: User.email,
+                password: User.password,
+            }),
+            headers: {
+                "Content-type": "application/json"
+            }
+        })).json();
+    if(!response.error){
+        return response;
+    }else{
+        throw response;
+    }
+}
+
 export async function addAllergiesService(userId : number, allergies: String) {
     const response = await (await fetch(`${URL_SCHEME}/allergy`,
         {

@@ -1,7 +1,7 @@
 import type{ UserAllergies } from './../shared/interface/user.interface';
 import {defineStore} from "pinia";
 import type { User, UserConnectInterface} from "@/shared/interface/user.interface";
-import { loginUserService, addAllergiesService } from "@/service/user.service";
+import { loginUserService, addAllergiesService, signUpUserService } from "@/service/user.service";
 import { defaultUser } from "@/shared/interface/user.interface";
 
 
@@ -18,6 +18,15 @@ export const useUserStore = defineStore("userStore", {
         async goConnect (formConnect: UserConnectInterface) {
             try {
                 const response = await loginUserService(formConnect);
+                this.currentUser = response;
+                localStorage.setItem('user', JSON.stringify(this.currentUser));
+            } catch (e) {
+                console.log("erreur" + e);
+            }
+        },
+        async signUp(formConnect: UserConnectInterface) {
+            try {
+                const response = await signUpUserService(formConnect);
                 this.currentUser = response;
                 localStorage.setItem('user', JSON.stringify(this.currentUser));
             } catch (e) {

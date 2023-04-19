@@ -42,7 +42,6 @@ const {value : hour } = useField("hour");
 
 
 const tryAddReservation = handleSubmit( async (formValues) => {
-  console.log("ça")
   try {
     await reservationStore.addReservation(formValues as reservationInterface);
   }catch (e){
@@ -53,33 +52,76 @@ const tryAddReservation = handleSubmit( async (formValues) => {
 </script>
 
 <template>
+  <div class="form-group">
+    <div class="form-sub-group">
     <form class="form" @submit="tryAddReservation">
         <h3>Réservation</h3>
-        <div class="input-control">
-            <label for="mail" class="input-label">Email :  </label>
-            <input type="text" v-model="mail" name="mail" id="mail" class="input-field" placeholder=email>
+        <div class="input-control py-1">
+            <label for="mail" class="input-label">Email</label>
+            <input type="text" v-model="mail" name="mail" id="mail" class="input-field input-sm" placeholder=email>
           </div>
     <div class="input-control">
-      <label for="allergies" class="input-label">Allergies :  </label>
+      <label for="allergies" class="input-label">Allergies</label>
       <input type="text" v-model="allergies" name="allergies" id="allergies" class="input-field" placeholder=allergies>
     </div>
     <div class="input-control">
-        <label for="numPerson" class="input-label">Nombre de personnes :  </label>
+        <label for="numPerson" class="input-label">Nombre de personnes</label>
         <input type="number" v-model="numPerson" name="numPerson" id="numPerson" class="input-field" placeholder=nombre/personne>
       </div>
-      <div class="form-group">
-        <label for="date">Date de Réservation</label>
+      <div class="input-control">
+        <label for="date" class="input-label">Date de Réservation</label>
         <select class="form-control" @change="scheduleStore.updateSelectSlot(date as Date)" v-model="date" id="date">
           <option v-for="dateresa in scheduleStore.dayslot" v-bind:value="dateresa">{{dateresa}}</option>
         </select>
       </div>
-      <div class="form-group">
-        <label for="hour">Heure de Réservation</label>
+      <div class="input-control">
+        <label for="hour" class="input-label">Heure de Réservation</label>
         <select class="form-control" v-model="hour" id="hour">
           <option v-for="hour in scheduleStore.listOfDaySlot" v-bind:value="hour">{{hour}}</option>
         </select>
       </div>
     <button type="submit" class="btn btn-info ">Réserver</button>
+
   </form>
+</div>
+  </div>
   </template>
+
+  <style>
+  .form-group {
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.form-sub-group{
+  margin: 30px auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.form-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  place-items: center left;
+  -webkit-box-align: center;
+  margin: 20px 0px;
+}
+.input-label {
+  padding-right: 5rem;
+}
+</style>
   

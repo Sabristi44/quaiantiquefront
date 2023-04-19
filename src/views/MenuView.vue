@@ -19,3 +19,9 @@ menuStore.getMenues();
       </div>
       <Footer></Footer>
   </template>
+
+  <style>
+.container {
+  margin-bottom: 10em;
+}
+</style>

@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import z from "zod";
+import z, { boolean } from "zod";
 import {useField, useForm} from "vee-validate"
 import {toFormValidator} from "@vee-validate/zod";
 import {useScheduleStore} from "@/stores/schedule.store";
 import { useReservationStore } from "@/stores/reservation.store";
 import type { reservationInterface } from "@/shared/interface/reservation.interface";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const scheduleStore = useScheduleStore()
 const reservationStore = useReservationStore()
@@ -24,7 +27,7 @@ const validationSchema = toFormValidator(
     z.object({
         allergies: z.string(required_error),
         numPerson: z.number(required_error),
-        mail: z.string(required_error),
+        mail: z.string(required_error).email(),
         date: z.any(required_error),
         hour: z.any(required_error),
     })
@@ -40,10 +43,15 @@ const {value : mail } = useField("mail");
 const {value : date } = useField("date");
 const {value : hour } = useField("hour");
 
-
 const tryAddReservation = handleSubmit( async (formValues) => {
   try {
     await reservationStore.addReservation(formValues as reservationInterface);
+    if(mail)
+  	if(localStorage.getItem("user") != null){
+      await router.push("/secure");
+    } else {
+    await router.push('/')
+    }
   }catch (e){
     console.log(e)
   }
@@ -52,10 +60,9 @@ const tryAddReservation = handleSubmit( async (formValues) => {
 </script>
 
 <template>
-  <div class="form-group">
+  <div class="form-group padding-footer">
     <div class="form-sub-group">
     <form class="form" @submit="tryAddReservation">
-        <h3>Réservation</h3>
         <div class="input-control py-1">
             <label for="mail" class="input-label">Email</label>
             <input type="text" v-model="mail" name="mail" id="mail" class="input-field input-sm" placeholder=email>
@@ -88,15 +95,18 @@ const tryAddReservation = handleSubmit( async (formValues) => {
   </template>
 
   <style>
+
+
   .form-group {
     width: 70%;
-    margin: 50px auto;
+    margin: auto;
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding-bottom: 2em;
 }
 .form-sub-group{
-  margin: 30px auto;
+  margin:  auto;
   width: auto;
   display: flex;
   flex-direction: column;
@@ -110,6 +120,10 @@ const tryAddReservation = handleSubmit( async (formValues) => {
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
+}
+
+.padding-footer {
+  padding-bottom: 10em;
 }
 
 .form-input {

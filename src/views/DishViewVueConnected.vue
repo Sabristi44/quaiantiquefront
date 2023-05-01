@@ -15,7 +15,7 @@ dishStore.getDishes();
     <NavbarConnected></NavbarConnected>
       <div class="container">
         <div class="col-sm">
-        <h3>Nos plats</h3>
+        <h3 class="img_title_dish">Nos plats</h3>
         <DishDetailVue :data="dish" v-for="dish in dishStore.allDishes"> </DishDetailVue>
     </div>
       </div>

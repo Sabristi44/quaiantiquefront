@@ -1,3 +1,4 @@
+import  ReservationViewVueConnected  from '@/views/ReservationViewConnected.vue';
 import type {RouteRecordRaw} from "vue-router";
 import HomeView from '@/views/HomeView.vue';
 import HomeConnectedView from '@/views/HomeConnectedView.vue';
@@ -33,7 +34,7 @@ export const APP_ROUTES: RouteRecordRaw[] = [
     {
         path: "book",
         beforeEnter: [],
-        component: HomeConnectedView,
+        component: ReservationViewVueConnected,
         meta: {
             page: "réserver"
         }

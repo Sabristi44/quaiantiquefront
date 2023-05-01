@@ -4,6 +4,9 @@ import {useForm, useField } from "vee-validate"
 import {toFormValidator} from "@vee-validate/zod";
 import {useDishStore} from "@/stores/dish.store"
 import type { addDishInterface } from "@/shared/interface/dish.interface";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const dishStore = useDishStore()
 const initialValues = {
@@ -35,6 +38,7 @@ const {value : category} = useField("category")
 const addDish = handleSubmit( async (formValues) => {
   try {
     await dishStore.addDish(formValues as addDishInterface);
+    await router.push('/admin');
   }catch (e){
     console.log(e)
   }

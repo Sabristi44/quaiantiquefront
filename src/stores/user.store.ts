@@ -4,7 +4,6 @@ import type { User, UserConnectInterface} from "@/shared/interface/user.interfac
 import { loginUserService, addAllergiesService, signUpUserService } from "@/service/user.service";
 import { defaultUser } from "@/shared/interface/user.interface";
 
-
 interface UserStoreInterface{
     currentUser: User,
 }
@@ -40,7 +39,7 @@ export const useUserStore = defineStore("userStore", {
         async updateAllergies(allergies: UserAllergies)
         {
             try {
-            addAllergiesService(this.currentUser.id,allergies.allergies);
+             addAllergiesService(this.currentUser.id,allergies.allergies);
             this.currentUser.allergies = allergies.allergies;
             } catch(e) {
                 console.log("erreur" + e);

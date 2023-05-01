@@ -13,7 +13,7 @@ menuStore.getMenues();
     <NavbarConnected></NavbarConnected>
       <div class="container">
         <div class="col-sm">
-        <h3>Nos menus</h3>
+        <h3 class="img_title_menu">Nos menus</h3>
         <MenuDetailView :data="menu" v-for="menu in menuStore.menues"></MenuDetailView>
     </div>
       </div>

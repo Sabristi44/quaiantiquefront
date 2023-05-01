@@ -4,6 +4,9 @@ import {useField, useForm} from "vee-validate"
 import {toFormValidator} from "@vee-validate/zod";
 import {useMenuStore} from "@/stores/menu.store";
 import type { addMenuInterface } from "@/shared/interface/menu.interface";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const menuStore = useMenuStore()
 const initialValues = {
@@ -13,7 +16,7 @@ const initialValues = {
 const required_error = {required_error : "Veuillez renseigner ce champ"}
 const validationSchema = toFormValidator(
     z.object({
-        title: z.string(required_error),
+        title: z.string(required_error).min(1),
     })
 )
 const {handleSubmit} = useForm({
@@ -26,6 +29,7 @@ const {value : title } = useField("title");
 const tryAddMenu = handleSubmit( async (formValues) => {
   try {
     await menuStore.addMenu(formValues as addMenuInterface);
+    await router.push('/admin');
   }catch (e){
     console.log(e)
   }

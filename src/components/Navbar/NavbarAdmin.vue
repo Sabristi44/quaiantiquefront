@@ -15,9 +15,9 @@ function logout() {
 <template>
   <!--Navbar -->
   <nav class="navbar fixed-top navbar-light bg-info justify-content-around">
-    <a class="navbar-brand">Quai antique</a>
+    <a class="navbar-brand text-white">Quai antique</a>
     <div>
-    <span class="mx-3"><router-link to="/admin/" class="without-text-decoration">Galerie d'image</router-link></span>
+    <span class="mx-3"><router-link to="/admin/" class="without-text-decoration">Accueil admin</router-link></span>
     <span class="mx-3"><router-link to="/admin/dish" class="without-text-decoration">Plat</router-link></span>
    <span class="mx-3"><router-link to="/admin/menu" class="without-text-decoration">Menu</router-link></span>
    <span class="mx-3"><router-link to="/admin/schedule" class="without-text-decoration">Horaires</router-link></span>

@@ -1,5 +1,8 @@
 import type { reservationInterface } from './../shared/interface/reservation.interface';
 import { URL_SCHEME } from './index.service';
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 
 export async function addReservationService(Reservation : reservationInterface) {
@@ -18,6 +21,7 @@ export async function addReservationService(Reservation : reservationInterface) 
             }
         })).json();
     if(!response.error){
+        router.push('/secure');
         return response;
     }else{
         throw response;

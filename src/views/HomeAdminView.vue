@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import NavbarAdmin from '@/components/Navbar/NavbarAdmin.vue';
-import compositionForm from '@/components/Form/composition.form.vue';
-import FileForm from "./../components/Form/file.form.vue";
+import Footer from '@/components/Footer/footer.vue';
 </script>
 
 <template>
   <main>
     <NavbarAdmin></NavbarAdmin>
-    <h1>Admin</h1>
-    <FileForm></FileForm>
+<div class="container"></div>
+    <h1>Bienvenue sur votre panel d'administration</h1>
     <Footer></Footer>
   </main>
 </template>

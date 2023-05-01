@@ -8,7 +8,8 @@ export const useReservationStore = defineStore("reservationStore", {
     actions: {
         async addReservation (formValues: reservationInterface) {
             try {
-                await addReservationService(formValues);
+            await addReservationService(formValues);
+    
             } catch (e) {
                 console.log("erreur" + e);
             }

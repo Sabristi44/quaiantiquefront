@@ -50,7 +50,7 @@ const {handleSubmit} = useForm({
 const {value : openingMonday } = useField("openingMonday");
 const {value : closingMonday } = useField("closingMonday");
 const {value : openingTuesday } = useField("openingTuesday");
-const {value : closingTuesday } = useField("openingTuesday");
+const {value : closingTuesday } = useField("closingTuesday");
 const {value : openingWednesday } = useField("openingWednesday");
 const {value : closingWednesday } = useField("closingWednesday");
 const {value : openingThursday } = useField("openingThursday");
@@ -90,51 +90,51 @@ const tryAddSchedule = handleSubmit( async (formValues) => {
       </div>
       <div class="input-control">
         <label for="openingTuesday" class="input-label">Ouverture Mardi</label>
-        <input type="openingTuesday" v-model="openingTuesday" name="openingTuesday" id="openingTuesday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="openingTuesday" v-model="openingTuesday" name="openingTuesday" id="openingTuesday" class="input-field" placeholder={{initialValues.openingTuesday}}>
       </div>
       <div class="input-control">
         <label for="closingTuesday" class="input-label">Fermeture Mardi</label>
-        <input type="closingTuesday" v-model="closingTuesday" name="closingTuesday" id="closingTuesday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="closingTuesday" v-model="closingTuesday" name="closingTuesday" id="closingTuesday" class="input-field" placeholder={{initialValues.closingTuesday}}>
       </div>
       <div class="input-control">
         <label for="openingWednesday" class="input-label">Ouverture Mercredi</label>
-        <input type="openingWednesday" v-model="openingWednesday" name="openingWednesday" id="openingWednesday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="openingWednesday" v-model="openingWednesday" name="openingWednesday" id="openingWednesday" class="input-field" placeholder={{initialValues.openingWednesday}}>
       </div>
       <div class="input-control">
         <label for="closingWednesday" class="input-label">Fermeture Mercredi</label>
-        <input type="closingWednesday" v-model="closingWednesday" name="closingMonday" id="closingMonday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="closingWednesday" v-model="closingWednesday" name="closingMonday" id="closingMonday" class="input-field" placeholder={{initialValues.closingWednesday}}>
       </div>
       <div class="input-control">
         <label for="openingThursday" class="input-label">Ouverture Jeudi</label>
-        <input type="openingThursday" v-model="openingThursday" name="openingThursday" id="openingThursday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="openingThursday" v-model="openingThursday" name="openingThursday" id="openingThursday" class="input-field" placeholder={{initialValues.openingThursday}}>
       </div>
       <div class="input-control">
         <label for="closingThursday" class="input-label">Fermeture Jeudi</label>
-        <input type="closingThursday" v-model="closingThursday" name="closingThursday" id="closingThursday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="closingThursday" v-model="closingThursday" name="closingThursday" id="closingThursday" class="input-field" placeholder={{initialValues.closingThursday}}>
       </div>
       <div class="input-control">
         <label for="openingFriday" class="input-label">Ouverture Vendredi</label>
-        <input type="openingFriday" v-model="openingFriday" name="openingFriday" id="openingFriday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="openingFriday" v-model="openingFriday" name="openingFriday" id="openingFriday" class="input-field" placeholder={{initialValues.openingFriday}}>
       </div>
       <div class="input-control">
         <label for="closingFriday" class="input-label">Fermeture Vendredi</label>
-        <input type="closingFriday" v-model="closingFriday" name="closingFriday" id="closingFriday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="closingFriday" v-model="closingFriday" name="closingFriday" id="closingFriday" class="input-field" placeholder={{initialValues.closingFriday}}>
       </div>
       <div class="input-control">
         <label for="openingSaturday" class="input-label">Ouverture Samedi</label>
-        <input type="openingSaturday" v-model="openingSaturday" name="openingSaturday" id="openingSaturday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="openingSaturday" v-model="openingSaturday" name="openingSaturday" id="openingSaturday" class="input-field" placeholder={{initialValues.openingSaturday}}>
       </div>
       <div class="input-control">
         <label for="closingSaturday" class="input-label">Fermeture Samedi</label>
-        <input type="closingSaturday" v-model="closingSaturday" name="closingSaturday" id="closingSaturday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="closingSaturday" v-model="closingSaturday" name="closingSaturday" id="closingSaturday" class="input-field" placeholder={{initialValues.ClosingSaturday}}>
       </div>
       <div class="input-control">
         <label for="openingSunday" class="input-label">Ouverture Dimanche</label>
-        <input type="openingSunday" v-model="openingSunday" name="openingSunday" id="openingSunday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="openingSunday" v-model="openingSunday" name="openingSunday" id="openingSunday" class="input-field" placeholder={{initialValues.openingSunday}}>
       </div>
       <div class="input-control">
         <label for="closingSunday" class="input-label" >Fermeture dimanche</label>
-        <input type="closingSunday" v-model="closingSunday" name="closingSunday" id="closingSunday" class="input-field" placeholder={{initialValues.openingMonday}}>
+        <input type="closingSunday" v-model="closingSunday" name="closingSunday" id="closingSunday" class="input-field" placeholder=initialValues.openingSunday>
       </div>
     <div class="input-control">
       <input type="submit" class="input-submit" value="Envoyer">

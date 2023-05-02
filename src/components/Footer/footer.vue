@@ -22,22 +22,22 @@ scheduleStore.getSchedule()
                         </ul>
                         </div>
             </div>             
-
     </div>
 
     
 </template>
 
 <style>  
+
 .footer {
+max-height: 20vh;
 padding-top: 1em;
 padding-bottom: 1em;
 background: linear-gradient(105deg,#6e99e6 ,#093c94);    /* Footer height */
 }
 
-@media only screen and (max-width:768px) { 
-.single_footer{margin-bottom:30px;}
-}
+
+
 .single_footer h4 {
 color: #fff;
 margin-top: 0;
@@ -47,7 +47,6 @@ text-transform: uppercase;
 font-size: 20px;
 }
 .single_footer h4::after {
-content: "";
 display: block;
 height: 2px;
 width: 40px;

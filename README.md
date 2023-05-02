@@ -13,3 +13,6 @@ git clone https://github.com/Sabristi44/quaiantiquefront.git
 
 npm i
 npm run dev
+
+
+builder en locale : Si API build en locale renseigner le bon localhst voir dans le fichier index.service
